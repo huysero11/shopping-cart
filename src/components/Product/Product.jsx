@@ -1,9 +1,13 @@
 import "./Product.css";
 
 const Product = (props) => {
-  console.log("in product.jsx ", props.img);
+  // console.log("in product.jsx ", props.img);
+  const handleCardClick = (e) => {
+    console.log("in product.jsx ", e.target);
+  };
+
   return (
-    <div className="product-card">
+    <div className="product-card" onClick={handleCardClick}>
       <div className="product-img-wrapper">
         <img className="product-img" src={props.img} alt={props.name} />
       </div>

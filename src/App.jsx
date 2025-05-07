@@ -1,11 +1,17 @@
-import CartButton from "./cartButton/CartButton.jsx";
-import ProductList from "./productList/ProductList.jsx";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage/HomePage.jsx";
+import CartPage from "./pages/CartPage/CartPage.jsx";
+import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage.jsx";
+import "./App.css";
 
 const App = () => {
   return (
     <>
-      <ProductList />
-      <CartButton count={1} />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/product-detail" element={<ProductDetailPage />} />
+      </Routes>
     </>
   );
 };

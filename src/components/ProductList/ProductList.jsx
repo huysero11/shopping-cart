@@ -1,6 +1,6 @@
 import "./ProductList.css";
 import { useEffect, useState } from "react";
-import Product from "../product/Product.jsx";
+import Product from "../Product/Product.jsx";
 import { FaSpinner } from "react-icons/fa";
 
 const ProductList = () => {

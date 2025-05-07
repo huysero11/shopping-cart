@@ -1,0 +1,20 @@
+.home-button {
+  position: fixed; /* pin to viewport */
+  top: 20px; /* distance from top */
+  left: 20px; /* distance from right */
+  background: rgb(182, 247, 183);
+  border: none;
+  border-radius: 50%; /* circular background */
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  z-index: 1000; /* sit above everything */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-button svg {
+  width: 54px;
+  height: 54px;
+}
