@@ -1,0 +1,51 @@
+.product-list {
+  background-color: rgb(255, 255, 255);
+  margin: 100px 200px 0px 20px;
+  padding: 20px;
+  height: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px 0px;
+}
+
+.product-item {
+  flex: 0 0 calc(25% - 10px);
+  height: 400px;
+  background-color: rgb(230, 248, 236);
+  /* border: 2px solid rgb(35, 124, 35); */
+  box-shadow: 0 0 8px rgba(28, 91, 28, 0.8);
+  margin: 5px;
+  border-radius: 30px;
+}
+
+.product-item:hover {
+  scale: 1.05;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/*loading*/
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px; /* or whatever minimum makes sense */
+  font-size: 1.2rem;
+}
+
+.spinner {
+  margin-right: 8px;
+  animation: spin 1s linear infinite;
+  font-size: 1.5rem;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
