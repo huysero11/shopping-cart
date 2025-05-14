@@ -4,7 +4,7 @@ import ProductList from "../../components/ProductList/ProductList";
 const HomePage = () => {
   return (
     <>
-      <CartButton />
+      <CartButton count={5} />
       <ProductList />
     </>
   );
