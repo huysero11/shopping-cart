@@ -1,32 +1,38 @@
-import "./ProductList.css";
-import { useEffect, useState } from "react";
-import Product from "../Product/Product.jsx";
+import { useEffect } from "react";
 import { FaSpinner } from "react-icons/fa";
+import { MdErrorOutline } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  productListErrorSelector,
+  productListSelector,
+  productListStatusSelector,
+} from "../../redux/selectors.jsx";
+import { fetchProducts } from "../../slices/productsSlice/productsSlice.jsx";
+import Product from "../Product/Product.jsx";
+import "./ProductList.css";
 
 const ProductList = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const status = useSelector(productListStatusSelector);
+  const error = useSelector(productListErrorSelector);
+  const products = useSelector(productListSelector);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    async function fetchData() {
-      setLoading(true);
-
-      const response = await fetch("https://fakestoreapi.com/products");
-      const data = await response.json();
-      console.log(data);
-      setProducts(data);
-
-      setLoading(false);
-    }
-    fetchData();
+    dispatch(fetchProducts());
   }, []);
 
   return (
     <>
       <div className="product-list">
-        {loading && (
+        {status === "loading" && (
           <div className="loading">
             <FaSpinner className="spinner" /> Loading..
+          </div>
+        )}
+
+        {status === "failed" && (
+          <div className="failed">
+            <MdErrorOutline className="error" /> {error}
           </div>
         )}
 
