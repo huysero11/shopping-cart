@@ -18,7 +18,9 @@ const ProductList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchProducts());
+    if (status === "idle") {
+      dispatch(fetchProducts());
+    }
   }, []);
 
   if (status === "loading") {
