@@ -19,7 +19,7 @@ const CartProducts = () => {
 
       <div className="cart-scroll-box">
         {productInCartList.map((item) => (
-          <ProductInCart info={item} />
+          <ProductInCart key={item.id} info={item} />
         ))}
       </div>
 

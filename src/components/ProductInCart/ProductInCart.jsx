@@ -19,7 +19,8 @@ const ProductInCart = (props) => {
     }
   };
 
-  const handleCheckboxClick = () => {
+  const handleCheckboxClick = (e) => {
+    // console.log("in productCart.jsx, checkbox: ", e.target.checked);
     dispatch(cartSlice.actions.tickCheckbox(product.id));
   };
 
@@ -58,7 +59,11 @@ const ProductInCart = (props) => {
       </div>
       <div className="product-in-cart-check-and-remove">
         <div className="product-in-cart-choose">
-          <input type="checkbox" onChange={handleCheckboxClick}></input>
+          <input
+            type="checkbox"
+            checked={product.checked}
+            onChange={handleCheckboxClick}
+          ></input>
         </div>
         <Button
           className="product-in-cart-remove"
