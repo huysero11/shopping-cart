@@ -4,6 +4,7 @@ import "./App.css";
 import CartPage from "./pages/CartPage/CartPage.jsx";
 import HomePage from "./pages/HomePage/HomePage.jsx";
 import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage.jsx";
+import AddProductNotification from "./components/notifications/AddProductNotification/AddProductNotification.jsx";
 
 const App = () => {
   return (
@@ -12,6 +13,10 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/product-detail/:id" element={<ProductDetailPage />} />
+        <Route
+          path="product-detail/:id/add-product-success-notification"
+          element={<AddProductNotification />}
+        />
       </Routes>
     </>
   );

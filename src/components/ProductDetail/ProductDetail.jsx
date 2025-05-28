@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { productListSelector } from "../../redux/selectors.jsx";
 import { FaStar } from "react-icons/fa";
@@ -52,12 +52,17 @@ const ProductDetail = () => {
             <div className="product-detail-count">
               <strong>Count:</strong> {` ${product.rating.count}`}
             </div>
-            <button
-              className="product-detail-add-button"
-              onClick={handleAddButtonClick}
+            <Link
+              to={`/product-detail/${product.id}/add-product-success-notification`}
+              className="product-detail-add-button-link"
             >
-              Add to cart
-            </button>
+              <button
+                className="product-detail-add-button"
+                onClick={handleAddButtonClick}
+              >
+                Add to cart
+              </button>
+            </Link>
           </div>
         </div>
       </div>
