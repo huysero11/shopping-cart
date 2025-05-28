@@ -27,7 +27,7 @@ const CartProducts = () => {
       <div className="cart-footer">
         <div className="cart-total">
           <div>{`${totalQuantity} products`}</div>
-          <strong>{`Total: ${totalPrice}`}</strong>
+          <strong>{`Total: ${totalPrice.toFixed(2)}`}</strong>
         </div>
 
         <Button className="cart-footer-buy-button" type="primary">

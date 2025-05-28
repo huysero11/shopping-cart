@@ -48,6 +48,14 @@ const cartSlice = createSlice({
           return item;
         }
       });
+
+      state.totalPrice = state.items.reduce((sum, item) => {
+        if (item.checked) {
+          return sum + item.price * item.quantity;
+        } else {
+          return sum;
+        }
+      }, 0);
     },
     decreaseQuantity: (state, action) => {
       const id = action.payload;
@@ -59,6 +67,32 @@ const cartSlice = createSlice({
           return item;
         }
       });
+
+      state.totalPrice = state.items.reduce((sum, item) => {
+        if (item.checked) {
+          return sum + item.price * item.quantity;
+        } else {
+          return sum;
+        }
+      }, 0);
+    },
+    tickCheckbox: (state, action) => {
+      const id = action.payload;
+      state.items = state.items.map((item) => {
+        if (item.id == id) {
+          const newItem = { ...item, checked: !item.checked };
+          return newItem;
+        } else {
+          return item;
+        }
+      });
+      state.totalPrice = state.items.reduce((sum, item) => {
+        if (item.checked) {
+          return sum + item.price * item.quantity;
+        } else {
+          return sum;
+        }
+      }, 0);
     },
   },
 });
