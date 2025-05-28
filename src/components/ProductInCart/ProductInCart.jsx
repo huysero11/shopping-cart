@@ -14,7 +14,9 @@ const ProductInCart = (props) => {
   };
 
   const handleDecreaseButtonClick = () => {
-    dispatch(cartSlice.actions.decreaseQuantity(product.id));
+    if (product.quantity > 1) {
+      dispatch(cartSlice.actions.decreaseQuantity(product.id));
+    }
   };
 
   return (
@@ -45,7 +47,7 @@ const ProductInCart = (props) => {
             </Space.Compact>
 
             <div className="product-in-cart-total-price">
-              {`Total: $${product.quantity * product.price}`}
+              {`Total: $${(product.quantity * product.price).toFixed(2)}`}
             </div>
           </div>
         </div>
