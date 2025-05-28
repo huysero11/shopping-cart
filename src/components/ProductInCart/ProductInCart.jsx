@@ -2,6 +2,7 @@ import "./ProductInCart.css";
 import { Button, Space } from "antd";
 import { CloseCircleOutlined } from "@ant-design/icons";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import cartSlice from "../../slices/cartSlice/cartSlice.jsx";
 
 const ProductInCart = (props) => {
@@ -30,7 +31,13 @@ const ProductInCart = (props) => {
 
   return (
     <div className="product-in-cart-container" key={product.id}>
-      <img className="product-in-cart-image" src={product.image} />
+      <Link
+        to={`/product-detail/${product.id}`}
+        className="product-in-cart-image-link"
+      >
+        <img className="product-in-cart-image" src={product.image} />
+      </Link>
+
       <div className="product-in-cart-info">
         <div className="product-in-cart-name">
           <strong>{product.title}</strong>

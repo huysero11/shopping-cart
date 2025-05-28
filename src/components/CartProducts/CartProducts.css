@@ -21,7 +21,7 @@
 }
 
 .cart-scroll-box {
-  background-color: #e6ffeb;
+  background-color: #b9f9d9;
   height: 60vh;
   overflow-y: auto;
   padding: 20px;
@@ -58,7 +58,7 @@
 .cart-footer-buy-button {
   width: 100px;
   height: 50px;
-  background: rgb(146, 222, 146);
+  background: #57ca91;
   color: black;
   font-weight: 700;
   font-size: 20px;
