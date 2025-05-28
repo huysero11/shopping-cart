@@ -38,6 +38,11 @@ const cartSlice = createSlice({
 
       // console.log("In cartSlice, items len = ", state.items.length);
     },
+    removeFromCart: (state, action) => {
+      const id = action.payload;
+      state.items = state.items.filter((item) => item.id != id);
+      state.totalQuantity--;
+    },
     increaseQuantity: (state, action) => {
       const id = action.payload;
       state.items = state.items.map((item) => {

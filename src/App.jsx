@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+// import "antd/dist/reset.css";
 import CartPage from "./pages/CartPage/CartPage.jsx";
 import HomePage from "./pages/HomePage/HomePage.jsx";
 import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage.jsx";

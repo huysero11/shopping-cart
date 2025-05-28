@@ -7,8 +7,8 @@ import cartSlice from "../../slices/cartSlice/cartSlice.jsx";
 const ProductInCart = (props) => {
   //   console.log("in ProductInCart.jsx, props: ", props);
   const product = props.info;
-
   const dispatch = useDispatch();
+
   const handleIncreaseButtonClick = () => {
     dispatch(cartSlice.actions.increaseQuantity(product.id));
   };
@@ -22,6 +22,10 @@ const ProductInCart = (props) => {
   const handleCheckboxClick = (e) => {
     // console.log("in productCart.jsx, checkbox: ", e.target.checked);
     dispatch(cartSlice.actions.tickCheckbox(product.id));
+  };
+
+  const handleRemoveButtonClick = () => {
+    dispatch(cartSlice.actions.removeFromCart(product.id));
   };
 
   return (
@@ -70,6 +74,7 @@ const ProductInCart = (props) => {
           type="primary"
           danger
           icon={<CloseCircleOutlined />}
+          onClick={handleRemoveButtonClick}
         ></Button>
       </div>
     </div>
