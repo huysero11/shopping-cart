@@ -28,7 +28,7 @@ const productsSlice = createSlice({
 const fetchProducts = createAsyncThunk("products/fetchProducts", async () => {
   try {
     const response = await axios.get("https://fakestoreapi.com/products");
-    console.log("response in productsSlice", response);
+    // console.log("response in productsSlice", response);
 
     return response.data;
   } catch (err) {

@@ -1,0 +1,68 @@
+import "./ProductInCart.css";
+import { Button, Space } from "antd";
+import { CloseCircleOutlined } from "@ant-design/icons";
+import { useDispatch } from "react-redux";
+import cartSlice from "../../slices/cartSlice/cartSlice.jsx";
+
+const ProductInCart = (props) => {
+  //   console.log("in ProductInCart.jsx, props: ", props);
+  const product = props.info;
+
+  const dispatch = useDispatch();
+  const handleIncreaseButtonClick = () => {
+    dispatch(cartSlice.actions.increaseQuantity(product.id));
+  };
+
+  const handleDecreaseButtonClick = () => {
+    dispatch(cartSlice.actions.decreaseQuantity(product.id));
+  };
+
+  return (
+    <div className="product-in-cart-container" key={product.id}>
+      <img className="product-in-cart-image" src={product.image} />
+      <div className="product-in-cart-info">
+        <div className="product-in-cart-name">
+          <strong>{product.title}</strong>
+        </div>
+        <div className="product-in-cart-price-and-quantity">
+          <div className="product-in-cart-price">{`$${product.price}`}</div>
+
+          <div className="product-in-cart-quantity-and-total-price">
+            <Space.Compact className="product-in-cart-quantity">
+              <Button
+                onClick={handleDecreaseButtonClick}
+                // product-id={product.id}
+              >
+                -
+              </Button>
+              <Button>{product.quantity}</Button>
+              <Button
+                onClick={handleIncreaseButtonClick}
+                // product-id={product.id}
+              >
+                +
+              </Button>
+            </Space.Compact>
+
+            <div className="product-in-cart-total-price">
+              {`Total: $${product.quantity * product.price}`}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="product-in-cart-check-and-remove">
+        <div className="product-in-cart-choose">
+          <input type="checkbox"></input>
+        </div>
+        <Button
+          className="product-in-cart-remove"
+          type="primary"
+          danger
+          icon={<CloseCircleOutlined />}
+        ></Button>
+      </div>
+    </div>
+  );
+};
+
+export default ProductInCart;

@@ -1,8 +1,14 @@
+import HomeButton from "../../components/HomeButton/HomeButton.jsx";
+import CartButton from "../../components/CartButton/CartButton.jsx";
+import ProductDetail from "../../components/ProductDetail/ProductDetail.jsx";
+import "./ProductDetailPage.css";
+
 const ProductDetailPage = () => {
   return (
-    <div>
-      <h1>Product Detail Page</h1>
-      <p>Details about the selected product will be displayed here.</p>
+    <div className="product-detail-page">
+      <HomeButton />
+      <ProductDetail />
+      <CartButton />
     </div>
   );
 };

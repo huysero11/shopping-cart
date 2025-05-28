@@ -21,21 +21,25 @@ const ProductList = () => {
     dispatch(fetchProducts());
   }, []);
 
+  if (status === "loading") {
+    return (
+      <div className="loading">
+        <FaSpinner className="spinner" /> Loading..
+      </div>
+    );
+  }
+
+  if (status === "failed") {
+    return (
+      <div className="failed">
+        <MdErrorOutline className="error" /> {error}
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="product-list">
-        {status === "loading" && (
-          <div className="loading">
-            <FaSpinner className="spinner" /> Loading..
-          </div>
-        )}
-
-        {status === "failed" && (
-          <div className="failed">
-            <MdErrorOutline className="error" /> {error}
-          </div>
-        )}
-
         {products.map((product) => {
           //   console.log(product);
           return (

@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
-import HomePage from "./pages/HomePage/HomePage.jsx";
-import CartPage from "./pages/CartPage/CartPage.jsx";
-import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage.jsx";
 import "./App.css";
+import CartPage from "./pages/CartPage/CartPage.jsx";
+import HomePage from "./pages/HomePage/HomePage.jsx";
+import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage.jsx";
 
 const App = () => {
   return (
@@ -10,7 +10,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/cart" element={<CartPage />} />
-        <Route path="/product-detail" element={<ProductDetailPage />} />
+        <Route path="/product-detail/:id" element={<ProductDetailPage />} />
       </Routes>
     </>
   );

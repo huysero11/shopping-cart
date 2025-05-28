@@ -1,0 +1,8 @@
+.product-detail-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e3e3e3;
+  min-height: 100vh; /* always at least the full viewport height */
+  margin: 0; /* kill any default body margins */
+}

@@ -1,0 +1,50 @@
+.product-in-cart-container {
+  background-color: white;
+  height: 150px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.product-in-cart-image {
+  width: 20%;
+  object-fit: contain;
+}
+
+.product-in-cart-info {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-in-cart-name {
+  height: 60%;
+}
+
+.product-in-cart-quantity-and-total-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* remove default style */
+.product-in-cart-choose input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #666;
+  border-radius: 4px;
+  cursor: pointer;
+  accent-color: rgb(58, 190, 98);
+}
+
+/* .product-in-cart-choose input[type="checkbox"]:checked {
+  background-color: green;
+  color: green;
+} */
+
+.product-in-cart-check-and-remove {
+  display: flex;
+  align-items: center;
+}
