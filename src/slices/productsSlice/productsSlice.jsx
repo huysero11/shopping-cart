@@ -4,7 +4,21 @@ import axios from "axios";
 const productsSlice = createSlice({
   name: "products",
   initialState: {
-    productList: [],
+    productList: [
+      /*
+      {
+        id,
+        name, 
+        image,
+        price,
+        category,
+        description,
+        rate,
+        count
+      }
+      
+      */
+    ],
     status: "idle",
     error: null,
   },
@@ -16,7 +30,18 @@ const productsSlice = createSlice({
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.productList = action.payload;
+        state.productList = action.payload.map((item) => {
+          return {
+            id: item.id,
+            name: item.title,
+            image: item.image,
+            price: item.price,
+            category: item.category,
+            description: item.description,
+            rate: item.rating.rate,
+            count: item.rating.count,
+          };
+        });
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         state.status = "failed";

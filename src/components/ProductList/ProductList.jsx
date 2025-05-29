@@ -48,12 +48,12 @@ const ProductList = () => {
             <div className="product-item" key={product.id}>
               <Product
                 id={product.id}
-                img={product.image}
-                name={product.title}
+                image={product.image}
+                name={product.name}
                 price={product.price}
                 description={product.description}
-                rating={product.rating.rate}
-                count={product.rating.count}
+                rating={product.rate}
+                count={product.count}
               />
             </div>
           );

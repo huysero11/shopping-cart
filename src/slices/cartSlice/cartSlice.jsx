@@ -20,7 +20,7 @@ const cartSlice = createSlice({
   },
   reducers: {
     addToCart: (state, action) => {
-      // console.log("In cartSlice, addToCart, payload = ", action.payload);
+      console.log("In cartSlice, addToCart, payload = ", action.payload);
 
       const product = action.payload;
       const existedProduct = state.items.find((item) => item.id === product.id);

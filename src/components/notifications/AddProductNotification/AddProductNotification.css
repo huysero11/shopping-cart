@@ -33,7 +33,7 @@
   object-fit: contain;
 }
 
-.success-notification-OK-button-link {
+.success-notification-OK-button-wrapper {
   flex-grow: 1;
   display: flex;
   align-items: center;

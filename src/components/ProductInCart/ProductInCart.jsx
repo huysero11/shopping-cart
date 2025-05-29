@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import cartSlice from "../../slices/cartSlice/cartSlice.jsx";
 
 const ProductInCart = (props) => {
-  //   console.log("in ProductInCart.jsx, props: ", props);
+  console.log("in ProductInCart.jsx, props.info.props: ", props.info);
   const product = props.info;
   const dispatch = useDispatch();
 
@@ -40,7 +40,7 @@ const ProductInCart = (props) => {
 
       <div className="product-in-cart-info">
         <div className="product-in-cart-name">
-          <strong>{product.title}</strong>
+          <strong>{product.name}</strong>
         </div>
         <div className="product-in-cart-price-and-quantity">
           <div className="product-in-cart-price">{`$${product.price}`}</div>

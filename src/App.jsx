@@ -12,9 +12,17 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/cart" element={<CartPage />} />
+
         <Route path="/product-detail/:id" element={<ProductDetailPage />} />
+
+        {/* full-page notification */}
         <Route
-          path="product-detail/:id/add-product-success-notification"
+          path="/product-detail/:id/add-product-success-notification"
+          element={<AddProductNotification />}
+        />
+
+        <Route
+          path="/:id/add-product-success-notification"
           element={<AddProductNotification />}
         />
       </Routes>

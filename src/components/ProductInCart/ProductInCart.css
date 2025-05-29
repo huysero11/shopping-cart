@@ -28,7 +28,8 @@
 }
 
 .product-in-cart-name {
-  height: 60%;
+  margin-top: 5px;
+  height: calc(60% - 5px);
 }
 
 .product-in-cart-quantity-and-total-price {

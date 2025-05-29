@@ -40,9 +40,24 @@
   overflow: hidden; /* hide the rest */
 }
 
-.product-price-wrapper {
+.product-price-and-icon-wrapper {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-add-icons-wrapper:hover {
+  scale: 1.2;
+}
+
+.product-add-plus-icon {
+  margin-left: 20px;
+  color: rgb(0, 0, 0);
+}
+
+.product-add-cart-icon {
+  color: black;
+  scale: calc(20 / 16);
 }
 
 .product-price {

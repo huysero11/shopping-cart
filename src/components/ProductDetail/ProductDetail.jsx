@@ -12,7 +12,7 @@ const ProductDetail = () => {
   const product = useSelector(() => {
     return productList.find((item) => item.id === Number(id));
   });
-  // console.log("product in ProductDetail.jsx: ", product);
+  console.log("product in ProductDetail.jsx: ", productList);
   // console.log(productList);
 
   const dispatch = useDispatch();
@@ -46,14 +46,14 @@ const ProductDetail = () => {
         </div>
         <div className="lower-part">
           <p className="product-detail-star">
-            {`${product.rating.rate} `} <FaStar />
+            {`${product.rate} `} <FaStar />
           </p>
           <div className="product-detail-count-and-button-container">
             <div className="product-detail-count">
-              <strong>Count:</strong> {` ${product.rating.count}`}
+              <strong>Count:</strong> {` ${product.count}`}
             </div>
             <Link
-              to={`/product-detail/${product.id}/add-product-success-notification`}
+              to={`add-product-success-notification`}
               className="product-detail-add-button-link"
             >
               <button
