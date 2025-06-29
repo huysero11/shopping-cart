@@ -125,6 +125,14 @@ const cartSlice = createSlice({
         );
       }
     },
+    buyProducts: (state, action) => {
+      const productList = state.items;
+      const unCheckedItems = productList.filter((item) => !item.checked);
+
+      state.items = unCheckedItems; // Keep only unchecked items in the cart
+      state.totalQuantity = unCheckedItems.length; // Update total quantity
+      state.totalPrice = 0;
+    },
   },
 });
 

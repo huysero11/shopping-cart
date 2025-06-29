@@ -8,6 +8,7 @@ import {
 import cartSlice from "../../slices/cartSlice/cartSlice.jsx";
 import { useDispatch } from "react-redux";
 import { Button } from "antd";
+import { Link } from "react-router-dom";
 import "./CartProducts.css";
 
 const CartProducts = () => {
@@ -25,6 +26,12 @@ const CartProducts = () => {
     handleChooseAllCheckboxClicked();
     const checkboxElement = document.querySelector(".cart-choose-all-checkbox");
     checkboxElement.checked = !checkboxElement.checked;
+  };
+
+  const hanldeBuyButtonClicked = () => {
+    dispatch(cartSlice.actions.buyProducts());
+    const checkboxElement = document.querySelector(".cart-choose-all-checkbox");
+    checkboxElement.checked = false; // Reset the choose all checkbox
   };
 
   return (
@@ -58,9 +65,15 @@ const CartProducts = () => {
           <strong>{`Total: ${totalPrice.toFixed(2)}`}</strong>
         </div>
 
-        <Button className="cart-footer-buy-button" type="primary">
-          Buy
-        </Button>
+        <Link to="buy-products-success-notification">
+          <Button
+            className="cart-footer-buy-button"
+            type="primary"
+            onClick={hanldeBuyButtonClicked}
+          >
+            Buy
+          </Button>
+        </Link>
       </div>
     </div>
   );

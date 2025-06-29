@@ -5,6 +5,7 @@ import CartPage from "./pages/CartPage/CartPage.jsx";
 import HomePage from "./pages/HomePage/HomePage.jsx";
 import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage.jsx";
 import AddProductNotification from "./components/notifications/AddProductNotification/AddProductNotification.jsx";
+import BuyProductsNotification from "./components/notifications/BuyProductsNotification/BuyProductsNotification.jsx";
 
 const App = () => {
   return (
@@ -24,6 +25,11 @@ const App = () => {
         <Route
           path="/:id/add-product-success-notification"
           element={<AddProductNotification />}
+        />
+
+        <Route
+          path="/cart/buy-products-success-notification"
+          element={<BuyProductsNotification />}
         />
       </Routes>
     </>
