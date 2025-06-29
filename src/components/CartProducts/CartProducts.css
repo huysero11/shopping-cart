@@ -38,6 +38,28 @@
   padding: 10px;
 }
 
+.cart-choose-all-container {
+  display: flex;
+  align-items: center;
+  /* margin-bottom: 10px; */
+}
+
+.cart-choose-all-checkbox {
+  width: 20px;
+  height: 20px;
+}
+
+.cart-choose-all-text {
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.cart-choose-all-text:hover {
+  cursor: pointer;
+  color: #57ca91;
+}
+
 .cart-total {
   margin-top: 20px;
   font-size: 20px;

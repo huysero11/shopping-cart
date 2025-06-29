@@ -99,6 +99,32 @@ const cartSlice = createSlice({
         }
       }, 0);
     },
+    tickChooseAllCheckbox: (state, action) => {
+      const productList = state.items;
+      const numberOfCheckedItems = productList.filter(
+        (item) => item.checked
+      ).length;
+
+      if (numberOfCheckedItems === productList.length) {
+        // If all items are checked, uncheck all
+        state.items = productList.map((item) => {
+          const newItem = { ...item, checked: false };
+          return newItem;
+        });
+
+        state.totalPrice = 0; // Reset total price when unchecking all
+      } else {
+        state.items = productList.map((item) => {
+          const newItem = { ...item, checked: true };
+          return newItem;
+        });
+
+        state.totalPrice = state.items.reduce(
+          (sum, item) => sum + item.price * item.quantity,
+          0
+        );
+      }
+    },
   },
 });
 
